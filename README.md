@@ -18,9 +18,7 @@
 - **Counterfactual Perturbation Modeling:** Integrates latent-space optimization with a frozen generative decoder to investigate transcriptional changes under simulated gene knockout conditions.
 - **Density-guided Virtual Cell Generation:** Introduces Reverse scDQ-path to aggregate latent-space exploration patterns and perform probabilistic sampling, generating heterogeneous virtual cell populations.
 - **Unified Dynamics and Perturbation Framework:** Integrates trajectory inference, regulatory analysis, counterfactual knockout simulation, and virtual cell generation within a unified reinforcement learning framework.
-----
-For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
-----
+
 ## Workflow
 
 | Step | Process | Description |
@@ -38,6 +36,10 @@ For a more detailed explanation of the scDQ-path model, architecture, and algori
 - **Sparse and Non-sparse Network Analysis:** Supports both sparse and non-sparse network representations, allowing regulatory interactions to be investigated under different network constraints.
 - **Network Power Estimation:** Evaluates the magnitude of regulatory influence through network power analysis, providing an additional measure of the potential impact of individual regulatory interactions.
 - **Probabilistic Virtual Cell Sampling:** Enables probabilistic sampling of heterogeneous virtual cell populations following gene knockout simulations by leveraging explored latent-space distributions and visitation densities.
+
+----
+For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
+----
 
 ## Core Technologies
 
