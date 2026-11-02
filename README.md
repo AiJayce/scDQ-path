@@ -49,8 +49,8 @@ Entropy is calculated from the relative distribution of reconstructed gene expre
 
 $$
 p_g=
-\frac{\operatorname{expm1}(\max(f_g(z),0))}
-{\sum_h\operatorname{expm1}(\max(f_h(z),0))}
+\frac{\mathrm{expm1}(\max(f_g(z),0))}
+{\sum_h \mathrm{expm1}(\max(f_h(z),0))}
 $$
 
 $$
@@ -119,7 +119,7 @@ This representation compares axis-specific net displacements across three segmen
 The silhouette coefficient compares the average distance within the same cluster, $a_i$, with the average distance to the nearest alternative cluster, $b_i$:
 
 $$
-\operatorname{silhouette}(i)=
+s(i)=
 \frac{b_i-a_i}{\max(a_i,b_i)}
 $$
 
@@ -165,7 +165,7 @@ New virtual cells were generated around regions repeatedly visited by the DQN, a
 All post-movement latent coordinates from the simulated trajectories were used as candidate Gaussian centers. One center was randomly selected, and small perturbations proportional to the observed standard deviation of each latent dimension were added.
 
 $$
-z_{\mathrm{virtual}}=z_{\mathrm{visit}}+\epsilon
+z_DIL0}=z_DIL1}+\epsilon
 $$
 
 $$
