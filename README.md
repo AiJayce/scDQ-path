@@ -32,7 +32,7 @@
 - **Sparse and Non-sparse Network Analysis:** Supports both sparse and non-sparse network representations, allowing regulatory interactions to be investigated under different network constraints.
 - **Network Power Estimation:** Evaluates the magnitude of regulatory influence through network power analysis, providing an additional measure of the potential impact of individual regulatory interactions.
 
-<img width="3600" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
+<img width="3400" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
 
 - **Probabilistic Virtual Cell Sampling:** Enables probabilistic sampling of heterogeneous virtual cell populations following gene knockout simulations by leveraging explored latent-space distributions and visitation densities.
 
@@ -45,7 +45,7 @@
 | **03** | [**Gene Regulatory Network (GRN) Construction**](https://github.com/AiJayce/scDQ-path/tree/Gene-Regulatory-Network-%28GRN%29-Construction) | Inference of directed gene regulatory relationships and analysis of trajectory-dependent transcriptional dynamics. |
 | **04** | [**Reverse scDQ-path: Virtual Cell Sampling**](https://github.com/AiJayce/scDQ-path/tree/Reverse-scDQ-path-Virtual-Cell-Sampling) | Reverse latent-space exploration and density-guided probabilistic sampling to generate perturbation-associated virtual cells. |
 | **05** | [**Benchmark and Validation**](https://github.com/AiJayce/scDQ-path/tree/Benchmark-and-Validation) | Quantitative evaluation of virtual cell generation and perturbation responses against observed single-cell transcriptomic profiles. |
-| **06** | [**Advanced: Double KO Simulation**]((https://github.com/AiJayce/scDQ-path/tree/Advanced-Double-KO-Simulation)) | Advanced virtual cell simulation of combinatorial gene perturbations through double knockout (DKO) and evaluation of compensatory transcriptional responses. |
+| **06** | [**Advanced: Double KO Simulation**](https://github.com/AiJayce/scDQ-path/tree/Advanced-Double-KO-Simulation) | Advanced virtual cell simulation of combinatorial gene perturbations through double knockout (DKO) and evaluation of compensatory transcriptional responses. |
 
 ----
 For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
