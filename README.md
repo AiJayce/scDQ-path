@@ -64,10 +64,6 @@
 - Incorporate regulatory information from chromatin accessibility to improve GRN inference and perturbation response modeling.
 - Extend multimodal latent-space exploration to investigate regulatory dynamics and generate more biologically informed virtual cells.
 
-## Core Technologies
-
-`Python` · `PyTorch` · `Variational Autoencoder (VAE)` · `Double DQN` · `Reinforcement Learning` · `Latent Space Exploration` · `Gene Regulatory Network (GRN)` · `Counterfactual Simulation` · `Virtual Cell` · `scRNA-seq`
-
 ----
 For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
 ----
