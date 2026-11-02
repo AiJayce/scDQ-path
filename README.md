@@ -21,6 +21,15 @@
 
 ## Workflow
 
+## Workflow
+
+| Step | Process | Description |
+|:---:|---|---|
+| **01** | **Data Preprocessing (PBMC)** | Preprocessing, quality control, normalization, and feature selection of PBMC single-cell transcriptomic data. |
+| **02** | **Virtual Trajectory Construction** | DQN-based exploration of cellular state transitions and construction of continuous virtual trajectories. |
+| **03** | **Gene Regulatory Network (GRN) Construction** | Inference of directed gene regulatory relationships and analysis of trajectory-dependent transcriptional dynamics. |
+| **04** | **Reverse scDQ-path: Virtual Cell Sampling** | Reverse latent-space exploration and density-guided probabilistic sampling to generate perturbation-associated virtual cells. |
+| **05** | **Benchmark and Validation** | Quantitative evaluation of virtual cell generation and perturbation responses against observed single-cell transcriptomic profiles. |
 
 ## Model Strengths
 
