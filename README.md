@@ -158,12 +158,7 @@ This metric does not evaluate the accuracy of changes in one-to-one correspondin
 #### 2. Gene-wise Mean Residual
 
 $$
-e_g =
-\frac{1}{N_{\mathrm{pred}}}
-\sum_{i=1}^{N_{\mathrm{pred}}} \hat{x}_{ig}
--
-\frac{1}{N_{\mathrm{real}}}
-\sum_{j=1}^{N_{\mathrm{real}}} y_{jg}
+e_g = \mathrm{mean}(\hat{x}_{ig}) - \mathrm{mean}(y_{jg})
 $$
 
 This metric represents the difference between the predicted and actual mean expression of each gene.
