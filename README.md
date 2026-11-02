@@ -47,10 +47,6 @@
 | **05** | [**Benchmark and Validation**](https://github.com/AiJayce/scDQ-path/tree/Benchmark-and-Validation) | Quantitative evaluation of virtual cell generation and perturbation responses against observed single-cell transcriptomic profiles. |
 | **06** | [**Advanced: Double KO Simulation**](https://github.com/AiJayce/scDQ-path/tree/Advanced-Double-KO-Simulation) | Advanced virtual cell simulation of combinatorial gene perturbations through double knockout (DKO) and evaluation of compensatory transcriptional responses. |
 
-## Download list
-
-[Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. 
->> If HVG filtering excludes TFs of interest, it is recommended to construct the UMAP using HVGs first and then add the desired TFs to the selected gene list for downstream analysis.
 ----
 For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
 ----
