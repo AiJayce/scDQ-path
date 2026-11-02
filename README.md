@@ -60,10 +60,11 @@ Additionally, decoder-based Shannon entropy is used to characterize the reconstr
 
 <img width="4479" height="1834" alt="2-2" src="https://github.com/user-attachments/assets/3ba16021-fc1a-4920-9e50-87e40e1234b4" />
 
->> The DQ-path algorithm may not perform reliably when cellular clusters are poorly separated. Therefore, after Leiden-based clustering using a neighbor graph, it is recommended to remove subclusters that exhibit insufficient separation from neighboring clusters before applying DQ-path.
+>> 1. The DQ-path algorithm may not perform reliably when cellular clusters are poorly separated. Therefore, after Leiden-based clustering using a neighbor graph, it is recommended to remove subclusters that exhibit insufficient separation from neighboring clusters before applying DQ-path.
 
->> The tolerance threshold can be adjusted between 40 and 60 to filter out dropout-associated subclusters.
->> The Silhouette Coefficient can be used as a quantitative criterion to assess clustering quality before applying DQ-path.
+>> 2. The tolerance threshold can be adjusted between 40 and 60 to filter out dropout-associated subclusters.
+>> 3. The Silhouette Coefficient can be used as a quantitative criterion to assess clustering quality before applying DQ-path.
+>> [Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. If HVG filtering excludes TFs of interest, it is recommended to construct the UMAP using HVGs first and then add the desired TFs to the selected gene list for downstream analysis.
 
 ### Silhouette Score Evaluation
 
