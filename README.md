@@ -127,6 +127,8 @@ Higher values indicate that trajectories are more closely grouped within their o
 
 ### Figure Composition
 
+https://github.com/user-attachments/assets/224d8fb8-943e-4238-b9e7-5d4fe73d40c7
+
 | Panel | Display | Interpretation |
 |---|---|---|
 | Upper left | All trajectories as thin lines and medoids as thick lines | Diversity of generated trajectories and representative movement patterns |
