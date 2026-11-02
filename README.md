@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/8afd56e6-427a-4bf9-93a1-c31ebcf4e2a4
 # 2. Virtual Trajectory Construction
 
 # 2-1. DQN-Based Virtual Cellular State Trajectory Exploration in the VAE Latent Space
