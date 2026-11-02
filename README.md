@@ -83,6 +83,8 @@ $$
 
 Entropy is used to monitor changes in the expression distribution and is not included in the reward. UMAP is used exclusively for visualization, while action selection and empirical support constraints are evaluated in the latent space.
 
+https://github.com/user-attachments/assets/02db0d61-4f58-49ce-8d90-60ba615a6fc4
+
 In the attached simulation output, the 48 trajectories were classified into three branches.
 
 | Branch | Number of trajectories | Representative trajectory steps | Initial ATF6 | Final ATF6 |
