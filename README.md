@@ -18,7 +18,9 @@
 - **Counterfactual Perturbation Modeling:** Integrates latent-space optimization with a frozen generative decoder to investigate transcriptional changes under simulated gene knockout conditions.
 - **Density-guided Virtual Cell Generation:** Introduces Reverse scDQ-path to aggregate latent-space exploration patterns and perform probabilistic sampling, generating heterogeneous virtual cell populations.
 - **Unified Dynamics and Perturbation Framework:** Integrates trajectory inference, regulatory analysis, counterfactual knockout simulation, and virtual cell generation within a unified reinforcement learning framework.
+----
 
+----
 ## Workflow
 
 | Step | Process | Description |
