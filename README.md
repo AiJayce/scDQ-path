@@ -19,7 +19,7 @@
 - **Density-guided Virtual Cell Generation:** Introduces Reverse scDQ-path to aggregate latent-space exploration patterns and perform probabilistic sampling, generating heterogeneous virtual cell populations.
 - **Unified Dynamics and Perturbation Framework:** Integrates trajectory inference, regulatory analysis, counterfactual knockout simulation, and virtual cell generation within a unified reinforcement learning framework.
 ----
-
+For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
 ----
 ## Workflow
 
