@@ -21,18 +21,18 @@
 
 ## Model Strengths
 
-<img width="3800" height="1520" alt="그림3" src="https://github.com/user-attachments/assets/cc12c19a-4c10-4fa6-814d-e1ecb66290ed" />
+<img width="3600" height="1520" alt="그림3" src="https://github.com/user-attachments/assets/cc12c19a-4c10-4fa6-814d-e1ecb66290ed" />
 
 - **Agent-based Continuous Trajectory Learning:** Utilizes trained DQN agents to learn sequential state transitions in a continuous latent space, enabling flexible trajectory inference beyond predefined cell-state ordering.
 
 
-<img width="3800" height="1520" alt="124" src="https://github.com/user-attachments/assets/606ac36e-09d8-456d-8a8e-5b7df11ebe7f" />
+<img width="3600" height="1520" alt="124" src="https://github.com/user-attachments/assets/606ac36e-09d8-456d-8a8e-5b7df11ebe7f" />
 
 - **Directional Network Analysis:** Infers directed regulatory relationships and distinguishes positive (+) and negative (-) regulatory effects based on simulated transcriptional responses.
 - **Sparse and Non-sparse Network Analysis:** Supports both sparse and non-sparse network representations, allowing regulatory interactions to be investigated under different network constraints.
 - **Network Power Estimation:** Evaluates the magnitude of regulatory influence through network power analysis, providing an additional measure of the potential impact of individual regulatory interactions.
 
-<img width="3800" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
+<img width="3600" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
 
 - **Probabilistic Virtual Cell Sampling:** Enables probabilistic sampling of heterogeneous virtual cell populations following gene knockout simulations by leveraging explored latent-space distributions and visitation densities.
 
