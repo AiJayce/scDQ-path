@@ -21,8 +21,6 @@
 
 ## Workflow
 
-## Workflow
-
 | Step | Process | Description |
 |:---:|---|---|
 | **01** | **Data Preprocessing (PBMC)** | Preprocessing, quality control, normalization, and feature selection of PBMC single-cell transcriptomic data. |
