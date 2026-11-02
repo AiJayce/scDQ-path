@@ -64,7 +64,7 @@ Additionally, decoder-based Shannon entropy is used to characterize the reconstr
 
 >> 2. The tolerance threshold can be adjusted between 40 and 60 to filter out dropout-associated subclusters.
 >> 3. The Silhouette Coefficient can be used as a quantitative criterion to assess clustering quality before applying DQ-path.
->> [Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. If HVG filtering excludes TFs of interest, it is recommended to construct the UMAP using HVGs first and then add the desired TFs to the selected gene list for downstream analysis.
+>> 4. [Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. If a TF of interest is excluded from the gene list because it does not meet the HVG or logFC selection criteria, it is possible to visualize the cellular landscape using UMAP or PCA first and subsequently add the TF to the gene list for further analysis. However, this is generally not recommended, as TFs excluded by these filters are less likely to exhibit substantial expression variability or differential expression across cell states.
 
 ### Silhouette Score Evaluation
 
