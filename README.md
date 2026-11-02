@@ -47,6 +47,24 @@
 | **05** | [**Benchmark and Validation**](https://github.com/AiJayce/scDQ-path/tree/Benchmark-and-Validation) | Quantitative evaluation of virtual cell generation and perturbation responses against observed single-cell transcriptomic profiles. |
 | **06** | [**Advanced: Double KO Simulation**](https://github.com/AiJayce/scDQ-path/tree/Advanced-Double-KO-Simulation) | Advanced virtual cell simulation of combinatorial gene perturbations through double knockout (DKO) and evaluation of compensatory transcriptional responses. |
 
+## Discussion
+
+### 1. Potential Applications
+- Explores continuous cellular dynamics and alternative or potentially compensatory trajectories beyond conventional pseudotime inference.
+- Enables probabilistic generation of heterogeneous virtual cells under single and multi-target knockout conditions.
+- Provides opportunities for perturbation modeling and regulatory network investigation.
+
+### 2. Methodological Advantages
+- Integrates agent-based trajectory exploration, directional network analysis, and counterfactual perturbation modeling.
+- Captures multiple possible cellular state transitions rather than relying on a single inferred trajectory.
+- Supports density-guided sampling of virtual cellular populations.
+
+### 4. Future Directions
+- Integrate scRNA-seq and scATAC-seq to establish a multimodal framework connecting transcriptional dynamics with chromatin accessibility.
+- Incorporate regulatory information from chromatin accessibility to improve GRN inference and perturbation response modeling.
+- Extend multimodal latent-space exploration to investigate regulatory dynamics and generate more biologically informed virtual cells.
+
+
 ----
 For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
 ----
