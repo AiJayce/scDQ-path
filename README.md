@@ -33,6 +33,7 @@
 - **Network Power Estimation:** Evaluates the magnitude of regulatory influence through network power analysis, providing an additional measure of the potential impact of individual regulatory interactions.
 
 <img width="3800" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
+
 - **Probabilistic Virtual Cell Sampling:** Enables probabilistic sampling of heterogeneous virtual cell populations following gene knockout simulations by leveraging explored latent-space distributions and visitation densities.
 
 ## Workflow
