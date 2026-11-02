@@ -49,7 +49,8 @@
 
 ## Download list
 
-[Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. If HVG filtering excludes TFs of interest, it is recommended to construct the UMAP using HVGs first and then add the desired TFs to the selected gene list for downstream analysis.
+[Click here](https://resources.aertslab.org/cistarget/tf_lists/allTFs_hg38.txt) to download the TF list. 
+>> If HVG filtering excludes TFs of interest, it is recommended to construct the UMAP using HVGs first and then add the desired TFs to the selected gene list for downstream analysis.
 ----
 For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
 ----
