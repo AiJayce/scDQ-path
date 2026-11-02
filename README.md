@@ -35,13 +35,9 @@ The support constraint is evaluated using the distance to the **fifth nearest ob
 Let $d_t$ denote the distance to the target at step $t$, and let $\ell_t$ denote the actual movement length. The reward function is defined as follows:
 
 $$
-\begin{aligned}
-r_t ={}& \frac{d_t-d_{t+1}}{L}
-+ \min\left(1,\max\left(0,1-\frac{\ell_t}{L}\right)\right) \\
-&-0.03
-+\mathbb{1}(\text{first target arrival})
-\end{aligned}
+r_t = \frac{d_t-d_{t+1}}{L} + \min(1,\max(0,1-\frac{\ell_t}{L})) - 0.03 + \mathbb{1}(\text{first target arrival})
 $$
+
 
 | Reward Component | Calculation and Interpretation | Objective |
 |---|---|---|
