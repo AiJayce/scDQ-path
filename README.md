@@ -148,5 +148,5 @@ In the illustrated results, reconstructed expression levels of BACH2, LEF1, and 
 Concurrently, the proportion of neighboring observed Regulatory T cells increased along the trajectory. These patterns allow us to investigate whether virtual cellular state transitions are accompanied by coordinated changes in reconstructed TF expression and the local composition of observed cells.
 
 ----
-[Click here to view the PBMC preprocessing notebook](https://github.com/AiJayce/scDQ-path/blob/Virtual-Trajectory-Construction/scDQN.ipynb)
+[Click here to view the Virtual Trajectory Construction notebook](https://github.com/AiJayce/scDQ-path/blob/Virtual-Trajectory-Construction/scDQN.ipynb)
 ----
