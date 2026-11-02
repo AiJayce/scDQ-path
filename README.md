@@ -35,6 +35,8 @@ $$
 
 Only actions that decreased both targets were permitted. Entropy was used exclusively as a monitoring metric. Trajectories were terminated after a maximum of 500 movements, when no valid actions remained, or when the net displacement became stagnant during simulation.
 
+https://github.com/user-attachments/assets/437f6df4-a4dd-4e61-8d67-43de5d9d2e75
+
 In the attached execution, the 48 simulations were separated into **five branches**. This indicates that distinct movement patterns can emerge even when both targets are jointly suppressed. However, **joint suppression does not necessarily imply complete elimination of both target expressions**, and the Gaussian samples used for evaluation were not independently constrained to follow a monotonic decrease.
 
 ---
