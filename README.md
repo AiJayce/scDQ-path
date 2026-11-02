@@ -165,15 +165,11 @@ New virtual cells were generated around regions repeatedly visited by the DQN, a
 All post-movement latent coordinates from the simulated trajectories were used as candidate Gaussian centers. One center was randomly selected, and small perturbations proportional to the observed standard deviation of each latent dimension were added.
 
 $$
-z_DIL0}=z_DIL1}+\epsilon
+z_{\mathrm{virtual}} = z_{\mathrm{visit}} + \epsilon
 $$
 
 $$
-\epsilon\sim
-\mathcal{N}
-\left(
-0,\operatorname{diag}[(0.03\boldsymbol{\sigma})^2]
-\right)
+\epsilon \sim N(0, \mathrm{diag}(0.03^2\sigma_1^2, \ldots, 0.03^2\sigma_{16}^2))
 $$
 
 | Step | Implementation | Rationale |
@@ -191,9 +187,9 @@ $$
 
 | Relative visitation density | Color | Prespecified allocation | Number of virtual cells |
 |---|---|---:|---:|
-| $[0.8,1.0]$ | Red | 68.3% | 68 |
-| $[0.6,0.8)$ | Orange | 27.1% | 27 |
-| $[0.4,0.6)$ | Green | 4.6% | 5 |
+| [0.8, 1.0] | Red | 68.3% | 68 |
+| [0.6, 0.8) | Orange | 27.1% | 27 |
+| [0.4, 0.6) | Green | 4.6% | 5 |
 | Total | — | 100% | 100 |
 
 The density values represent relative visitation density normalized by the maximum observed visitation density, not percentile-based intervals. In addition, the allocation proportions of 68.3%, 27.1%, and 4.6% were predefined for this analysis. They do not represent the actual probability mass of each region or the 1σ, 2σ, and 3σ intervals of a Gaussian distribution.
@@ -202,11 +198,12 @@ Gaussian samples are generated independently of DQN actions. Therefore, they are
 
 ### Expression Similarity Calculation
 
-Cosine similarity was calculated between non-negative decoder output vectors, $x$ and $y$, representing virtual cells:
+Cosine similarity was calculated between non-negative decoder output vectors, x and y, representing virtual cells:
 
 $$
-\operatorname{cosine}(x,y)=
-\frac{x^\top y}{\|x\|_2\|y\|_2}
+\mathrm{cosine}(x,y) =
+\frac{x^T y}
+{\sqrt{\sum_i x_i^2}\sqrt{\sum_i y_i^2}}
 $$
 
 Values approaching 1 indicate that the overall gene expression vectors have similar directions. The calculation uses log1p decoder outputs with only negative values clipped to zero; the values are not inverse-transformed into linear counts.
@@ -226,11 +223,10 @@ Values approaching 1 indicate that the overall gene expression vectors have simi
 | High–Low density | 0.999976 | 0.999934 |
 | Intermediate–Low density | 0.999986 | 0.999919 |
 
-All three comparisons showed cosine similarities very close to 1, indicating that the overall expression patterns of the generated virtual cells remained highly similar across visitation-density groups. Among individual cell-pair comparisons, high–intermediate density showed the highest median similarity, whereas intermediate–low density showed the lowest. However, the differences were small, on the order of approximately $10^{-5}$. Therefore, they are more appropriately interpreted as subtle local expression differences rather than clear separation between distinct cellular states.
+All three comparisons showed cosine similarities very close to 1, indicating that the overall expression patterns of the generated virtual cells remained highly similar across visitation-density groups. Among individual cell-pair comparisons, high–intermediate density showed the highest median similarity, whereas intermediate–low density showed the lowest. However, the differences were small, on the order of approximately 10^-5. Therefore, they are more appropriately interpreted as subtle local expression differences rather than clear separation between distinct cellular states.
 
 Similarity between group-level mean vectors was higher than similarity between individual cell pairs, potentially because averaging reduces variation among individual samples. The heatmap also appears nearly uniform because all values are close to 1, whereas the boxplot provides a magnified view of these small differences.
 
-
-----
-[Click here to view the Reverse scDQ path Virtual Cell Sampling notebook](https://github.com/AiJayce/scDQ-path/blob/Virtual-Trajectory-Construction/scDQN.ipynb)
-----
+---
+[Click here to view the Reverse scDQ-path Virtual Cell Sampling notebook](https://github.com/AiJayce/scDQ-path/blob/Virtual-Trajectory-Construction/scDQN.ipynb)
+---
