@@ -1,4 +1,4 @@
-# Virtual Trajectory Construction
+# 2. Virtual Trajectory Construction
 
 # 2-1. DQN-Based Virtual Cellular State Trajectory Exploration in the VAE Latent Space
 
