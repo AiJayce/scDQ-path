@@ -56,13 +56,24 @@ The target approach and short movement components have equal weights. Consequent
 
 Additionally, decoder-based Shannon entropy is used to characterize the reconstructed expression profiles and monitor trajectory-associated changes. However, **entropy is not included in the current reward function.**
 
-**Notice**
+***Notice***
 
 <img width="4479" height="1834" alt="2-2" src="https://github.com/user-attachments/assets/3ba16021-fc1a-4920-9e50-87e40e1234b4" />
 
-The DQ-path algorithm may not perform reliably when cellular clusters are poorly separated. Therefore, after Leiden-based clustering using a neighbor graph, it is recommended to remove subclusters that exhibit insufficient separation from neighboring clusters before applying DQ-path.
+>> The DQ-path algorithm may not perform reliably when cellular clusters are poorly separated. Therefore, after Leiden-based clustering using a neighbor graph, it is recommended to remove subclusters that exhibit insufficient separation from neighboring clusters before applying DQ-path.
 
-The tolerance threshold can be adjusted between 40 and 60 to filter out dropout-associated subclusters.
+>> The tolerance threshold can be adjusted between 40 and 60 to filter out dropout-associated subclusters.
+>> The Silhouette Coefficient can be used as a quantitative criterion to assess clustering quality before applying DQ-path.
+
+### Silhouette Score Evaluation
+
+| Silhouette Score | Clustering Quality | Recommendation |
+|---|---|---|
+| 0.71–1.00 | Strong separation | Highly suitable |
+| 0.51–0.70 | Reasonable separation | Suitable |
+| 0.26–0.50 | Weak separation | Consider refining clustering |
+| ≤ 0.25 | Poor separation | Reconsider clustering or remove poorly separated subclusters |
+| Negative | Potentially incorrect cluster assignment | Review cluster composition and assignments |
 ---
 
 # 2-2. Action-Level Trajectory Validation and Policy Diagnostics
