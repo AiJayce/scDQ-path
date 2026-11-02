@@ -1,0 +1,4 @@
+density_band,n_virtual_cells,n_pairwise_comparisons,mean_cosine_similarity,median_cosine_similarity
+80-100%,821,986842,0.90774536,0.93200994
+60-80%,326,391852,0.90776914,0.9320065
+40-60%,55,66110,0.90754557,0.9318522

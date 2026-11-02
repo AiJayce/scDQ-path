@@ -1,0 +1,3 @@
+branch,n_simulations,fraction,representative_simulation,representative_model,representative_moves,representative_status,dominant_latent_axes,ATF6_start,ATF6_end_rep,ATF6_end_cluster_mean,entropy_start,entropy_end_rep,entropy_end_cluster_mean,UMAP_endpoint_displacement,mean_moves
+1,44,0.9166666666666666,45,4,39,early_stop_low_movement,"+Z16, +Z82, +Z63",0.09668371081352234,0.02719329670071602,0.03157201333140785,4.594231128692627,5.126136302947998,4.963724342259494,3.748521566390991,180.0681818181818
+2,4,0.08333333333333333,16,2,409,early_stop_low_movement,"-Z47, +Z107, +Z128",0.09668371081352234,0.047459423542022705,0.044992877170443535,4.594231128692627,4.854728698730469,4.866811275482178,1.911962628364563,412.0

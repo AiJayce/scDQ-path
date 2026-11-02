@@ -1,0 +1,6 @@
+metric_number,figure_panel_number,definition
+1,1,All predicted x measured cell-pair cosine over the fixed gene panel
+6,2,Per-gene mean(predicted) - mean(measured KO)
+7,3,Pearson correlation of predicted and measured gene mean vectors
+8,4,MAE and RMSE of the per-gene mean residual vector
+12,5,"Probability-density histogram of metric 1; 50 shared bins over [0, 1]"

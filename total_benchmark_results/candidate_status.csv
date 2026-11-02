@@ -1,0 +1,6 @@
+method,status,reason,source
+GEARS,blocked_training_data,Requires other perturbation training data; control alone cannot learn ATF6 response.,https://github.com/snap-stanford/GEARS
+CPA,blocked_training_data,No learned ATF6 perturbation embedding; unseen combinations are not an unseen single KO.,https://github.com/theislab/cpa
+scGen,blocked_training_data,Requires an observed perturbation latent shift; ATF6 KO training is forbidden.,https://github.com/theislab/scgen
+CellOracle,blocked_grn_and_prediction,"Control-only TF KO is possible, but a fitted GRN/prior and calibrated expression prediction are not supplied.",https://github.com/morris-lab/CellOracle
+scTenifoldKnk,incompatible_expression_endpoint,"WT-only virtual KO is possible, but differential-regulation/direction scores are not a cell x gene expression matrix.",https://github.com/cailab-tamu/scTenifoldKnk

@@ -1,0 +1,23 @@
+{
+  "data_url": "https://zenodo.org/records/7041849/files/AdamsonWeissman2016_GSM2406677_10X005.h5ad?download=1",
+  "conditions": [
+    "3x_neg_ctrl_pMJ144-1",
+    "ATF6_only_pMJ145"
+  ],
+  "seed": 42,
+  "expression_space": "log1p_CP10K_full_gene_library",
+  "gene_panel_sha256": "cc3a631da49e4622c8d564b2196f910d989da61cf6ed213d8edea29fed1aad33",
+  "n_genes": 2000,
+  "measured_KO_cells": 1202,
+  "density_band_counts": [
+    821,
+    326,
+    55
+  ],
+  "combined_weighting": "all archived virtual cells, not equal band means",
+  "cosine_definition": "all predicted x measured cell pairs; pairs are not independent",
+  "gene_panel_leakage": "archived KO/control DEG-informed fixed evaluation panel",
+  "DQN_role": "KO-informed reference only, excluded from independent predictor ranking",
+  "external_training_provenance": "self-declared, not independently audited",
+  "external_manifests": {}
+}

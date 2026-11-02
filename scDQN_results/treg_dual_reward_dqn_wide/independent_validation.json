@@ -1,0 +1,24 @@
+[
+  {
+    "branch": 1,
+    "verified_moves": 27,
+    "fraction_steps_above_original_support": 0.9629629629629629,
+    "max_support_distance_k5": 0.774526834487915,
+    "discounted_return": -0.8411195491434265,
+    "net_entropy_decreased": true,
+    "net_IKZF2_decreased": true,
+    "patience_stop_verified": true,
+    "PCA_range_ratio_vs_previous": 23.707916108318706
+  },
+  {
+    "branch": 2,
+    "verified_moves": 23,
+    "fraction_steps_above_original_support": 0.9565217391304348,
+    "max_support_distance_k5": 0.7747538089752197,
+    "discounted_return": -0.9685901427644901,
+    "net_entropy_decreased": true,
+    "net_IKZF2_decreased": true,
+    "patience_stop_verified": true,
+    "PCA_range_ratio_vs_previous": 3.224484378650069
+  }
+]

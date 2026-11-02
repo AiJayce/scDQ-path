@@ -1,0 +1,37 @@
+{
+  "reward_version": "foxp3_decrease_only_small_steps_v1",
+  "total": 100,
+  "seed": 20261031,
+  "sigma_observed_sd": 0.03,
+  "bands": [
+    [
+      0.8,
+      1.0
+    ],
+    [
+      0.6,
+      0.8
+    ],
+    [
+      0.4,
+      0.6
+    ]
+  ],
+  "proportions": [
+    0.683,
+    0.271,
+    0.046
+  ],
+  "counts": [
+    68,
+    27,
+    5
+  ],
+  "proposed_candidates": 2048,
+  "density": "section 14 post-start visits, smoothed grid divided by its maximum, not quantiles",
+  "projection": "original section 4 PCA; latent sampling, no inverse transform",
+  "gene_count": 2000,
+  "negative_decoder_entries_clipped": 51402,
+  "comparison": "density-band mean vectors and virtual-cell pairs; no measured ground truth",
+  "interpretation": "Gaussian neighborhood samples, not monotone DQN actions or causal KO validation"
+}

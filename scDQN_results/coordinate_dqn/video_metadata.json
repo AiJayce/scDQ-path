@@ -1,0 +1,14 @@
+{
+  "reward_version": "short_latent_move_goal_progress_distance_convergence_v8",
+  "frames": 323,
+  "fps": 24,
+  "moves": 500,
+  "minimum_generated_entropy_step": 19,
+  "status": "target_reached_at_step_500",
+  "goal_reached": true,
+  "distance_patience": 20,
+  "distance_min_delta": 0.0007619150638580323,
+  "duration_seconds": 13.458333333333334,
+  "display": "saved virtual 16D path on original PCA; H, delta H, separate rewards and total",
+  "validation": "reward reconstruction, coordinate projection, all frames decoded and counted"
+}

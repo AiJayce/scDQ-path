@@ -1,0 +1,14 @@
+{
+  "reward_version": "candidate_relative_entropy_distance_convergence_v7",
+  "frames": 229,
+  "fps": 24,
+  "moves": 312,
+  "minimum_generated_entropy_step": 1,
+  "status": "distance_converged_at_step_312",
+  "goal_reached": false,
+  "distance_patience": 20,
+  "distance_min_delta": 0.000455832052230835,
+  "duration_seconds": 9.541666666666666,
+  "display": "saved virtual 128D path on fixed UMAP; H, delta H, separate rewards and total",
+  "validation": "reward reconstruction, coordinate projection, all frames decoded and counted"
+}

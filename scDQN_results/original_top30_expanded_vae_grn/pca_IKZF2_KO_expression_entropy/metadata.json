@@ -1,0 +1,46 @@
+{
+  "model": "/home/Data_Drive_8TB/kykim/0. Jupyter/RL/scDQN_results/original_top30_expanded_vae_grn/expanded_models.pt",
+  "model_sha256": "e07b06ad985cd953e4900c873177aef2a47f5e94d181952951c845bd65c1958a",
+  "GRN": "/home/Data_Drive_8TB/kykim/0. Jupyter/RL/scDQN_results/original_top30_expanded_vae_grn/top30_tf_gene_grn_edges.csv",
+  "GRN_sha256": "52c516fafe271524bed0eb87313e2d18871f39cfdfd25f2ba9903b5477f555e8",
+  "source": "IKZF2",
+  "n_edges": 934,
+  "n_features": 2021,
+  "grid_shape": [
+    60,
+    60
+  ],
+  "n_grid_points": 3600,
+  "PCA": "PCA fit to expanded VAE all_z; inverse_transform with higher PCs zero; not original DQN PCA",
+  "PCA_explained_variance_ratio": [
+    0.5274972329705268,
+    0.4661408401339558
+  ],
+  "power_definition": "median(baseline decoded) - median(source-zero decoded), log1p CP10K",
+  "reference_IKZF2_log1p_CP10K": 0.5162573456764221,
+  "reference_n_cells": 585,
+  "KO_rule": "x=max(decode(z),0); a=x_IKZF2/reference_IKZF2; xKO_target=max(0,x_target-a*power_IKZF2_target); xKO_IKZF2=0; other genes unchanged",
+  "propagation": "IKZF2 outgoing response edges once only; no recursive propagation or absolute-value weights",
+  "entropy": "abundance=expm1(xKO); p=abundance/sum(abundance); H=-sum(p*ln(p)) over all decoder genes",
+  "normalized_entropy": "H_norm = H / ln(N), N = number of decoder genes; range [0, 1]",
+  "plotted_value": "H_norm",
+  "entropy_units": "nats (H); unitless (H_norm)",
+  "entropy_theoretical_range": [
+    0,
+    7.611347717403621
+  ],
+  "color_limits": [
+    0.29908516411048314,
+    0.4967681066594791
+  ],
+  "n_negative_decoder_values_clipped": 1929665,
+  "n_negative_target_predictions_clipped": 500438,
+  "response_scale_range": [
+    0.012207810065877638,
+    4.446071697046226
+  ],
+  "n_grid_outside_2D_cell_hull": 1606,
+  "decoder_unchanged": true,
+  "validation": "PCA roundtrip, scalar calibration, zero-source identity, signed response, unaffected genes, KO zero, independent scipy entropy all passed",
+  "caveats": "Aggregate response power is not a causal coefficient. Source-amplitude scaling is an assumed approximation, not learned dose-response. GRN is Treg-calibrated and model-derived. Entropy covers 2021 selected features, not the whole transcriptome or uncertainty. No optimized/re-encoded post-KO latent is claimed. 2D hull does not establish 16D support."
+}

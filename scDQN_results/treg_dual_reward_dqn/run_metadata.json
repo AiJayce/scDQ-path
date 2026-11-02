@@ -1,0 +1,56 @@
+{
+  "seed": 20261020,
+  "start_barcode": "GSM9453843_CTGAAACGTAGCCTCG-1",
+  "start_population": "Regulatory T",
+  "endpoint": null,
+  "max_moves": 100,
+  "n_actions": 192,
+  "step_lengths": [
+    0.00825,
+    0.0165,
+    0.033
+  ],
+  "entropy_definition": "Shannon of Gaussian weights from query coordinate to nearest 5 observed cells",
+  "entropy_sigma": 0.07180769741535187,
+  "entropy_epsilon": 1e-06,
+  "IKZF2_epsilon": 1e-05,
+  "IKZF2_floor": 0.0,
+  "support_limit_k5": 0.3875453481078143,
+  "reward": "(H-H_next)/log(5) + (IKZF2-IKZF2_next)/IKZF2_start",
+  "branch2_extra_reward": "diversity_weight * (distance_next_to_branch1 - distance_to_branch1)/step",
+  "diversity_weight": 1.0,
+  "episodes_per_branch": 400,
+  "gamma": 0.99,
+  "learning_rate": 0.0003,
+  "branches": [
+    {
+      "branch": 1,
+      "moves": 100,
+      "stop_reason": "maximum_100_moves",
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 0.615340523794141,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.4616839587688446
+    },
+    {
+      "branch": 2,
+      "moves": 98,
+      "stop_reason": "no_sampled_joint_decrease_within_support",
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 1.0191449027428572,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.4906570315361023
+    }
+  ],
+  "separation": {
+    "endpoint_distance_16d": 0.4867997545053137,
+    "symmetric_mean_nearest_distance_16d": 0.2734754619412587,
+    "shared_start_excluded": true
+  },
+  "limitations": [
+    "DQN is approximate; maximum separation is not guaranteed.",
+    "Early stopping concerns sampled finite actions, not all continuous directions.",
+    "Query-kNN entropy is not density or a biological differentiation measure.",
+    "Fixed-VAE decoded response is not a validated causal knockout."
+  ]
+}

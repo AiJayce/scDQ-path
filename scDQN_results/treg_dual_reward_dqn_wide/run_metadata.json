@@ -1,0 +1,73 @@
+{
+  "seed": 20261020,
+  "start_barcode": "GSM9453843_CTGAAACGTAGCCTCG-1",
+  "start_population": "Regulatory T",
+  "endpoint": null,
+  "max_moves": 100,
+  "n_actions": 272,
+  "step_lengths": [
+    0.033,
+    0.066,
+    0.132,
+    0.264
+  ],
+  "entropy_definition": "Shannon of Gaussian weights from query coordinate to nearest 5 observed cells",
+  "entropy_sigma": 0.07180769741535187,
+  "entropy_epsilon": 1e-06,
+  "IKZF2_epsilon": 1e-05,
+  "IKZF2_floor": 0.0,
+  "support_limit_k5": 0.3875453481078143,
+  "hard_support_multiplier": 2.0,
+  "soft_support_weight": 0.1,
+  "step_cost": 0.002,
+  "entropy_patience": 20,
+  "entropy_checkpoint_improvement": 0.001,
+  "policy_selection": "highest monitored discounted return among checkpoints with net decrease of both outputs",
+  "reward": "(H-H_next)/log(5) + (IKZF2-IKZF2_next)/IKZF2_start - soft_support_penalty - step_cost",
+  "branch2_extra_reward": "diversity_weight * (distance_next_to_branch1 - distance_to_branch1)/maximum_step",
+  "diversity_weight": 0.2,
+  "episodes_per_branch": 600,
+  "gamma": 0.99,
+  "learning_rate": 0.0003,
+  "branches": [
+    {
+      "branch": 1,
+      "moves": 27,
+      "stop_reason": "entropy_no_improvement_patience",
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 0.9762181128498525,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.013775773346424103,
+      "entropy_increase_steps": 13,
+      "IKZF2_increase_steps": 9,
+      "max_displacement_16d": 3.408080816268921,
+      "endpoint_displacement_16d": 3.408080816268921,
+      "cumulative_length_16d": 6.302999496459961
+    },
+    {
+      "branch": 2,
+      "moves": 23,
+      "stop_reason": "entropy_no_improvement_patience",
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 1.403776559010851,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.46724003553390503,
+      "entropy_increase_steps": 10,
+      "IKZF2_increase_steps": 9,
+      "max_displacement_16d": 0.8196594715118408,
+      "endpoint_displacement_16d": 0.8138881325721741,
+      "cumulative_length_16d": 2.9699997901916504
+    }
+  ],
+  "separation": {
+    "endpoint_distance_16d": 3.3334891342679076,
+    "symmetric_mean_nearest_distance_16d": 1.2316332686936935,
+    "shared_start_excluded": true
+  },
+  "limitations": [
+    "DQN is approximate; maximum separation is not guaranteed.",
+    "Temporary entropy and IKZF2 increases are allowed; stop after entropy patience or safety exhaustion.",
+    "Query-kNN entropy is not density or a biological differentiation measure.",
+    "Fixed-VAE decoded response is not a validated causal knockout."
+  ]
+}

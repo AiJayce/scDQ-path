@@ -1,0 +1,45 @@
+{
+  "input_grid": "/home/Data_Drive_8TB/kykim/0. Jupyter/RL/scDQN_results/original_top30_expanded_vae_grn/pca_IKZF2_KO_expression_entropy/pca_grid_GRN_KO.npz",
+  "input_grid_sha256": "48ca6bca63afde56a0e3df5262cd5a94c12e4cbec807fe8de82ee7d6a64b3383",
+  "model_sha256": "e07b06ad985cd953e4900c873177aef2a47f5e94d181952951c845bd65c1958a",
+  "GRN_sha256": "52c516fafe271524bed0eb87313e2d18871f39cfdfd25f2ba9903b5477f555e8",
+  "grid_shape": [
+    60,
+    60
+  ],
+  "n_vectors": 3600,
+  "n_zero_PCA_vectors": 0,
+  "vector": "delta_z=encoder_mu(xKO)-encoder_mu(max(decode(z),0)); delta_PC=delta_z @ PCA.components.T",
+  "anchor": "pc_endpoint=pc_grid+delta_PC; z_endpoint=z_grid+delta_z; reconstruction drift removed",
+  "scalars": {
+    "PCA_displacement_magnitude": "L2(delta_PC), original PC units",
+    "latent_displacement_magnitude": "L2(delta_z), full 16D latent units",
+    "expression_delta_L2_log1p_CP10K": "L2(xKO-x), all 2021 features"
+  },
+  "PCA_magnitude_quantiles": [
+    0.022422287410709067,
+    0.09300900364868599,
+    0.3030434530472307,
+    5.07671110878515,
+    7.325637439601174
+  ],
+  "baseline_roundtrip_drift_quantiles": [
+    0.07202181131794473,
+    0.5622438700092491,
+    2.9900668988498067
+  ],
+  "plot": {
+    "arrows": "unit direction multiplied by fixed display length; zero displacement gives zero arrow",
+    "fixed_arrow_length_PC_units": 0.20285760957337828,
+    "arrow_stride": 3,
+    "n_displayed_arrow_locations": 400,
+    "scalar_label_stride": 6,
+    "n_displayed_scalar_labels": 100,
+    "magnitude_color_limits": [
+      0.0,
+      7.325637439601174
+    ]
+  },
+  "validation": "saved grid and entropy unchanged; deterministic encoder; PCA roundtrip; projection difference equals delta; PCA magnitude <= latent magnitude; unit directions checked",
+  "caveats": "This is an anchored encoder-projected GRN expression response, not a time derivative, trajectory, entropy gradient, or mechanistic velocity. No recursive GRN propagation. Magnitude is not normalized to one; only display arrow direction is normalized. Anchored post-KO latent is a displacement proxy and need not decode to exact IKZF2 zero. GRN source-amplitude scaling and expression clipping are assumptions inherited from section 11-1. Treg-calibrated GRN and points outside the cell hull require extrapolation; hull is only 2D."
+}

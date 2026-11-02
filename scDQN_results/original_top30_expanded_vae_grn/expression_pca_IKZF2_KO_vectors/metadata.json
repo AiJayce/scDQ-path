@@ -1,0 +1,26 @@
+{
+  "GRN_sha256": "52c516fafe271524bed0eb87313e2d18871f39cfdfd25f2ba9903b5477f555e8",
+  "n_edges": 934,
+  "PCA": "sklearn PCA(2) on observed log1p CP10K of 2021 expanded features; centered, unscaled; no VAE",
+  "explained_variance_ratio": [
+    0.04536685238940182,
+    0.02500016777699818
+  ],
+  "grid": [
+    120,
+    120
+  ],
+  "n_occupied_bins": 1746,
+  "n_removed_empty_bins": 12654,
+  "n_cells": 3152,
+  "reference_IKZF2": 0.6002973857088986,
+  "reference": "mean observed IKZF2 log1p in Treg cells (median is 0)",
+  "KO_rule": "per cell: a=x_IKZF2/reference; x_target=max(0,x_target-a*power); x_IKZF2=0; others unchanged",
+  "direction": "bin mean of per-cell (x_KO-x) @ PCA.components.T, unit-normalized for direction",
+  "power": "L2 norm of bin-mean GRN target expression change (IKZF2 itself excluded)",
+  "arrow": "direction * power * one common linear scale",
+  "PC_units_per_power": 0.01938581043828558,
+  "n_bins_without_arrow": 1482,
+  "n_cells_IKZF2_positive": 270,
+  "caveats": "GRN powers were estimated from the expanded VAE decoder in Treg cells and are applied to observed expression with assumed linear IKZF2-amplitude scaling. Cells without detected IKZF2 receive no response (dropout possible). Not causal, experimental KO, or time velocity."
+}

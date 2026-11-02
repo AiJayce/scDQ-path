@@ -1,0 +1,26 @@
+{
+  "grid_shape": [
+    60,
+    60
+  ],
+  "n_grid_points": 3600,
+  "n_KO_converged": 3600,
+  "KO_tolerance": 0.001,
+  "inverse_PCA": "z = pca_mean + [PC1, PC2] @ components; all higher PC scores zero",
+  "KO": "same latent optimization as Section 9: stages, weights and steps preserved; fixed decoder",
+  "entropy": "H=-sum(p*ln(p)); p=softmax(-d^2/(2*sigma^2)) over 5 observed neighbors at optimized KO Z",
+  "sigma": 0.07180769741535187,
+  "reference": "unchanged observed Z_space; same sigma as Section 14 DQN",
+  "entropy_units": "nats",
+  "plot_location": "original PCA grid, not optimized KO position",
+  "color": "white to red; fixed theoretical entropy range [0, log(5)]",
+  "color_limits": [
+    0.0,
+    1.6094379124341003
+  ],
+  "support": "KO Z k5 distance <= 95th percentile observed k5 distances; outside extrapolates",
+  "support_cutoff": 0.23229418905967808,
+  "n_original_grid_supported": 1150,
+  "n_KO_supported": 0,
+  "caveats": "2D slice; neighborhood entropy is not gene-expression entropy or KO uncertainty; not experimental KO"
+}

@@ -1,0 +1,17 @@
+{
+  "graph": "full directed TF-gene model-response network; TFs filtered only after computing centralities",
+  "n_nodes": 1888,
+  "n_edges": 16037,
+  "n_existing_TFs": 156,
+  "n_perturbed_sources": 17,
+  "top_n_displayed_per_metric": 21,
+  "edge_weight": null,
+  "degree": "normalized total in + out degree",
+  "betweenness": "exact normalized directed shortest-path betweenness",
+  "closeness": "incoming directed shortest paths; Wasserman-Faust correction",
+  "eigenvector": "incoming-link left eigenvector; L2 normalized",
+  "eigenvalue": 14.671689745503784,
+  "eigenvector_residual_l2": 4.990447374174451e-09,
+  "ties": "same minimum rank; alphabetical display tie-break; zero scores are not meaningful distinctions",
+  "interpretation": "Model-network topology, not causal TF importance. Only sources with zero-validated counterfactual cells generate outgoing edges."
+}

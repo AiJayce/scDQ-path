@@ -1,0 +1,2 @@
+cells,genes,ranked_genes,required_genes,latent_dimensions,KL_active_dimensions,PCA_silhouette,UMAP_silhouette,DQN_moves,ATF6_KO_max_residual,top10_network_edges,all_TF_network_edges,branch_simulations,branches
+3406,2000,1994,6,16,1,0.19520075619220734,0.12858764827251434,322,0.0009099002927541733,1600,15603,48,2

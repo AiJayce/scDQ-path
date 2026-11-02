@@ -1,0 +1,24 @@
+{
+  "grid_shape": [
+    60,
+    60
+  ],
+  "n_grid_points": 3600,
+  "n_KO_converged": 3600,
+  "KO_tolerance": 0.001,
+  "inverse_PCA": "z = pca_mean + [PC1, PC2] @ components; all higher PC scores zero",
+  "KO": "same latent optimization as Section 9: stages, weights and steps preserved; fixed decoder",
+  "entropy": "H=-sum(p*ln(p)), p=expm1(max(decoded_log1p,0))/sum(expm1(max(decoded_log1p,0)))",
+  "n_decoder_features": 2000,
+  "entropy_units": "nats",
+  "plot_location": "original PCA grid, not optimized KO position",
+  "color": "white to red; shared observed grid entropy min/max across both panels",
+  "color_limits": [
+    3.0521297215980288,
+    4.267285804474584
+  ],
+  "support": "original Z k5 distance <= 95th percentile observed k5 distances; outside extrapolates",
+  "support_cutoff": 0.23229418694972975,
+  "n_original_grid_supported": 1150,
+  "caveats": "2D slice, 2000-gene decoder, negative predictions clipped; not experimental KO"
+}

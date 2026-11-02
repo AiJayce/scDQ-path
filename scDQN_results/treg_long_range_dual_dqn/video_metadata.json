@@ -1,0 +1,10 @@
+{
+  "video": "treg_long_range_dual_dqn.mp4",
+  "fps": 8,
+  "frames": 226,
+  "duration_seconds": 28.25,
+  "entropy_stop_nats": 3.433889865875244,
+  "path_display": "all generated latent sub-steps up to each completed DQN action",
+  "measurement_display": "saved entropy and IKZF2 at action endpoints; no interpolated values",
+  "validation": "all video frames decoded successfully; frame count verified"
+}

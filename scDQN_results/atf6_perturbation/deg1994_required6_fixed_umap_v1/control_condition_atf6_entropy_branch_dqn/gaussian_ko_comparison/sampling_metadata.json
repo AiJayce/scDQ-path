@@ -1,0 +1,23 @@
+{
+  "seed": 20261031,
+  "samples_per_group": 1202,
+  "gene_count": 2000,
+  "sigma_observed_sd_fraction": 0.03,
+  "gaussian": "Uniform mixture over DQN arrival latent coordinates; diagonal covariance (sigma_observed_sd_fraction * observed latent SD)^2",
+  "density": "Bilinear interpolation of section 14 peak-normalized Gaussian-smoothed UMAP visit density, not a density percentile",
+  "band_boundaries": "[0.8,1], [0.6,0.8), [0.4,0.6)",
+  "fractions": [
+    0.683,
+    0.271,
+    0.046
+  ],
+  "counts": [
+    821,
+    326,
+    55
+  ],
+  "integer_allocation": "largest remainder",
+  "proposals": 4096,
+  "expression": "Full original VAE decoder output clamped at zero in log1p CP10K space; select 1994 ranked non-required + six required genes. Actual KO uses measured adata.X, not VAE reconstruction.",
+  "interpretation": "Model-based sampled KO-like expression; not evidence of causal KO accuracy."
+}

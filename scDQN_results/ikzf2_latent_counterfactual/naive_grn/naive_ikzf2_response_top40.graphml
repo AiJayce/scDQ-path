@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d1" for="edge" attr.name="rank_sum_q_BH" attr.type="double" />
+  <key id="d0" for="edge" attr.name="power" attr.type="double" />
+  <graph edgedefault="directed">
+    <node id="IKZF2" />
+    <node id="S100A4" />
+    <node id="BACH2" />
+    <node id="PDE3B" />
+    <node id="TGFBR2" />
+    <node id="CAMK4" />
+    <node id="ACTB" />
+    <node id="MAML2" />
+    <node id="CRIP1" />
+    <node id="CCR7" />
+    <node id="BCL2" />
+    <node id="DOCK10" />
+    <node id="MBNL1" />
+    <node id="MALAT1" />
+    <node id="FOXP1" />
+    <node id="S100A10" />
+    <node id="ARHGAP15" />
+    <node id="CSGALNACT1" />
+    <node id="ANK3" />
+    <node id="DPYD" />
+    <node id="FHIT" />
+    <node id="INPP4B" />
+    <node id="NELL2" />
+    <node id="PFN1" />
+    <node id="LEF1" />
+    <node id="ZBTB20" />
+    <node id="PDE7A" />
+    <node id="PRKCA" />
+    <node id="TXK" />
+    <node id="CYBA" />
+    <node id="PLCL1" />
+    <node id="FP236383.3" />
+    <node id="KLF12" />
+    <node id="LINC01619" />
+    <node id="HERC1" />
+    <node id="TSHZ2" />
+    <node id="FP671120.4" />
+    <node id="IL32" />
+    <node id="IL7R" />
+    <node id="HIST1H1E" />
+    <node id="UTRN" />
+    <edge source="IKZF2" target="S100A4">
+      <data key="d0">0.39438778162002563</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="BACH2">
+      <data key="d0">-0.35555511713027954</data>
+      <data key="d1">7.924288340853418e-179</data>
+    </edge>
+    <edge source="IKZF2" target="PDE3B">
+      <data key="d0">-0.3504601716995239</data>
+      <data key="d1">4.757885075542488e-89</data>
+    </edge>
+    <edge source="IKZF2" target="TGFBR2">
+      <data key="d0">-0.310721755027771</data>
+      <data key="d1">3.8023139269176037e-197</data>
+    </edge>
+    <edge source="IKZF2" target="CAMK4">
+      <data key="d0">-0.30602335929870605</data>
+      <data key="d1">1.9837233917697163e-222</data>
+    </edge>
+    <edge source="IKZF2" target="ACTB">
+      <data key="d0">0.281862735748291</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="MAML2">
+      <data key="d0">-0.27342087030410767</data>
+      <data key="d1">7.944962254653301e-210</data>
+    </edge>
+    <edge source="IKZF2" target="CRIP1">
+      <data key="d0">0.264168381690979</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="CCR7">
+      <data key="d0">-0.2509899139404297</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="BCL2">
+      <data key="d0">-0.2507127523422241</data>
+      <data key="d1">3.2613294198366014e-123</data>
+    </edge>
+    <edge source="IKZF2" target="DOCK10">
+      <data key="d0">-0.24530738592147827</data>
+      <data key="d1">3.932083021868732e-185</data>
+    </edge>
+    <edge source="IKZF2" target="MBNL1">
+      <data key="d0">-0.24143660068511963</data>
+      <data key="d1">4.227577404659896e-143</data>
+    </edge>
+    <edge source="IKZF2" target="MALAT1">
+      <data key="d0">-0.2391071319580078</data>
+      <data key="d1">1.997182618051083e-74</data>
+    </edge>
+    <edge source="IKZF2" target="FOXP1">
+      <data key="d0">-0.2139444351196289</data>
+      <data key="d1">3.1175663205152845e-85</data>
+    </edge>
+    <edge source="IKZF2" target="S100A10">
+      <data key="d0">0.21267074346542358</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="ARHGAP15">
+      <data key="d0">-0.21202945709228516</data>
+      <data key="d1">3.3742532449525556e-112</data>
+    </edge>
+    <edge source="IKZF2" target="CSGALNACT1">
+      <data key="d0">-0.20531237125396729</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="ANK3">
+      <data key="d0">-0.20265644788742065</data>
+      <data key="d1">1.7635141980609644e-158</data>
+    </edge>
+    <edge source="IKZF2" target="DPYD">
+      <data key="d0">-0.2020147442817688</data>
+      <data key="d1">1.1852747638729415e-169</data>
+    </edge>
+    <edge source="IKZF2" target="FHIT">
+      <data key="d0">-0.19854211807250977</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="INPP4B">
+      <data key="d0">-0.18906790018081665</data>
+      <data key="d1">2.291031715007409e-88</data>
+    </edge>
+    <edge source="IKZF2" target="NELL2">
+      <data key="d0">-0.18537133932113647</data>
+      <data key="d1">5.842713093493943e-197</data>
+    </edge>
+    <edge source="IKZF2" target="PFN1">
+      <data key="d0">0.18459081649780273</data>
+      <data key="d1">1.3835623292028516e-168</data>
+    </edge>
+    <edge source="IKZF2" target="LEF1">
+      <data key="d0">-0.17823505401611328</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="ZBTB20">
+      <data key="d0">-0.17604154348373413</data>
+      <data key="d1">1.0040856967725131e-83</data>
+    </edge>
+    <edge source="IKZF2" target="PDE7A">
+      <data key="d0">-0.1712859869003296</data>
+      <data key="d1">1.7178403280133752e-295</data>
+    </edge>
+    <edge source="IKZF2" target="PRKCA">
+      <data key="d0">-0.1706485152244568</data>
+      <data key="d1">8.800898940114984e-121</data>
+    </edge>
+    <edge source="IKZF2" target="TXK">
+      <data key="d0">-0.16899001598358154</data>
+      <data key="d1">9.285085804415566e-150</data>
+    </edge>
+    <edge source="IKZF2" target="CYBA">
+      <data key="d0">0.16686928272247314</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="PLCL1">
+      <data key="d0">-0.1619875729084015</data>
+      <data key="d1">5.9056741324418216e-176</data>
+    </edge>
+    <edge source="IKZF2" target="FP236383.3">
+      <data key="d0">-0.15734195709228516</data>
+      <data key="d1">8.2056834246461e-111</data>
+    </edge>
+    <edge source="IKZF2" target="KLF12">
+      <data key="d0">-0.15634307265281677</data>
+      <data key="d1">2.3420534259882663e-124</data>
+    </edge>
+    <edge source="IKZF2" target="LINC01619">
+      <data key="d0">-0.1532713770866394</data>
+      <data key="d1">1.9537291568784786e-58</data>
+    </edge>
+    <edge source="IKZF2" target="HERC1">
+      <data key="d0">-0.14836591482162476</data>
+      <data key="d1">5.224435963366233e-168</data>
+    </edge>
+    <edge source="IKZF2" target="TSHZ2">
+      <data key="d0">-0.14811885356903076</data>
+      <data key="d1">9.759236849925178e-47</data>
+    </edge>
+    <edge source="IKZF2" target="FP671120.4">
+      <data key="d0">-0.14708995819091797</data>
+      <data key="d1">3.4858437775905e-215</data>
+    </edge>
+    <edge source="IKZF2" target="IL32">
+      <data key="d0">0.14391350746154785</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="IL7R">
+      <data key="d0">-0.14345407485961914</data>
+      <data key="d1">0.0</data>
+    </edge>
+    <edge source="IKZF2" target="HIST1H1E">
+      <data key="d0">-0.13731271028518677</data>
+      <data key="d1">2.4920695464573027e-56</data>
+    </edge>
+    <edge source="IKZF2" target="UTRN">
+      <data key="d0">-0.1307312250137329</data>
+      <data key="d1">8.474119402875583e-90</data>
+    </edge>
+  </graph>
+</graphml>

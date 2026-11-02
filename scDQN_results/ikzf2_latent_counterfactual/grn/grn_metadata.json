@@ -1,0 +1,16 @@
+{
+  "source": "IKZF2",
+  "n_cells": 585,
+  "n_genes_tested": 1999,
+  "n_edges": 927,
+  "n_positive": 576,
+  "n_negative": 351,
+  "FDR_threshold": 0.01,
+  "min_abs_power": 0.007965789176523685,
+  "power_filter": "|power| >= median |power| among FDR-significant targets; nonzero power",
+  "selection_test": "two-sided paired samples t-test (scipy.stats.ttest_rel, baseline vs IKZF2-zero per cell); BH",
+  "zero_variance_rule": "identical predictions p=1; constant nonzero shift p=0",
+  "n_constant_nonzero_shift": 0,
+  "power": "median(baseline decoded) - median(zero decoded)",
+  "interpretation": "Model response associations, not direct or causal GRN. Matched cell predictions are not independent biological replicates."
+}

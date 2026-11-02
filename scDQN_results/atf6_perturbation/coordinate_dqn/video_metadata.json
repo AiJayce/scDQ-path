@@ -1,0 +1,14 @@
+{
+  "reward_version": "candidate_relative_entropy_distance_convergence_v7",
+  "frames": 216,
+  "fps": 24,
+  "moves": 286,
+  "minimum_generated_entropy_step": 224,
+  "status": "distance_converged_at_step_286",
+  "goal_reached": false,
+  "distance_patience": 20,
+  "distance_min_delta": 0.00027304837703704836,
+  "duration_seconds": 9.0,
+  "display": "saved virtual 16D path on original PCA; H, delta H, separate rewards and total",
+  "validation": "reward reconstruction, coordinate projection, all frames decoded and counted"
+}

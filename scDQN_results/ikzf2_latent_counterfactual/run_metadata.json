@@ -1,0 +1,28 @@
+{
+  "method": "fixed-VAE latent optimization; decoded IKZF2 target zero",
+  "population": "all Regulatory T cells",
+  "n_cells": 585,
+  "target": 0.0,
+  "tolerance": 0.001,
+  "max_abs_decoded_IKZF2": 0.0003352835774421692,
+  "latent_weight": 0.1,
+  "prior_weight": 0.001,
+  "penalties": [
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    10000.0
+  ],
+  "learning_rates": [
+    0.02,
+    0.01,
+    0.005,
+    0.002,
+    0.001
+  ],
+  "steps_per_stage": 400,
+  "vae_weights_unchanged": true,
+  "expression_scale": "log1p CP10K; decoder outputs not clipped",
+  "interpretation": "Associational counterfactual, not a causal knockout prediction."
+}

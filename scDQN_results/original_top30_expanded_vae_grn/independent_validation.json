@@ -1,0 +1,12 @@
+{
+  "original_top30_matched": true,
+  "n_features": 2021,
+  "n_sources_attempted": 30,
+  "n_sources_with_edges": 17,
+  "n_sources_insufficient_zero_cells": 11,
+  "n_tested_sources_without_edges": 2,
+  "n_edges": 16037,
+  "all_rank_sum_tests_and_selections_independently_recomputed": true,
+  "all_cell_and_feature_alignment_validated": true,
+  "notebook_saved_with_outputs": true
+}

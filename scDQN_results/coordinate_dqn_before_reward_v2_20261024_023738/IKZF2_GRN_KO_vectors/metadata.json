@@ -1,0 +1,34 @@
+{
+  "model_sha256": "07a162f52b295b954b052685cbdf3c0a5da4ca2fb6a955cad1a7dd0e242dc980",
+  "GRN_sha256": "52c516fafe271524bed0eb87313e2d18871f39cfdfd25f2ba9903b5477f555e8",
+  "grid_resolution": [
+    120,
+    120
+  ],
+  "n_occupied_bins": 2139,
+  "n_removed_empty_bins": 12261,
+  "n_cells": 3152,
+  "n_arrows": 2139,
+  "occupancy": "strict histogram bins with >=1 observed cell; no hull interpolation or nearest-neighbor fill",
+  "PCA": "exact original coordinate_dqn/coordinate_models.pt components and mean; no PCA fit",
+  "coordinate_validation": "saved graph, exported DQN path, observed-expression encoder reproduction; live PCA if present",
+  "grid_query": "bin-center PC -> z=PC@components+mean; higher PC scores zero; original DQN VAE and PCA",
+  "KO": "x=max(decode(z),0); a=x_IKZF2/reference; xKO_target=max(0,x_target-a*signed_power); xKO_IKZF2=0",
+  "reference_IKZF2_log1p": 0.5162573456764221,
+  "n_GRN_edges": 914,
+  "n_expanded_only_edges_excluded": 20,
+  "direction": "normalize((encoder_mu(xKO)-encoder_mu(x)) @ PCA.components.T); zero vector stays zero",
+  "change_power": "L2 of actual signed GRN target expression changes after zero-floor; source IKZF2 excluded",
+  "arrow": "direction * change_power * one_common_linear_display_scale",
+  "display_PC_units_per_power": 0.010480639567189967,
+  "max_arrow_length_PC_units": 0.1357706843575821,
+  "power_range": [
+    0.062043386725728025,
+    12.95442739798221
+  ],
+  "no_projected_direction_bins": 0,
+  "power_positive_but_zero_direction_bins": 0,
+  "Shannon_background": false,
+  "separate_scalar_panel": false,
+  "caveats": "Expanded-VAE GRN powers transferred to original-VAE expression; only original-model targets are used. Treg-calibrated aggregate model-response GRN; source-amplitude scaling is assumed, not causal. Grid-center inverse PCA is a higher-PC-zero slice, not the actual latent of every cell in a bin. Arrows are a projected one-step perturbation response, not time velocity or guaranteed KO latent. Arrow lengths encode GRN expression response power, not PCA endpoint distance; no recursive propagation."
+}

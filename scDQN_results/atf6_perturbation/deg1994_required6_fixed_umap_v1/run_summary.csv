@@ -1,0 +1,2 @@
+workflow,cells,genes,ranked_genes,required_genes,latent_dimensions,KL_active_dimensions,PCA_silhouette,UMAP_silhouette,display_space,DQN_moves,ATF6_KO_max_residual,top10_valid_KOs,all_TF_valid_KOs,all_TF_network_edges,branch_simulations,branches
+deg1994_required6_fixed_umap_v1,3406,2000,1994,6,128,1,0.12129366397857666,0.1271241307258606,fixed UMAP from section 4,250,0.00029318034648895264,10,80,16001,48,7

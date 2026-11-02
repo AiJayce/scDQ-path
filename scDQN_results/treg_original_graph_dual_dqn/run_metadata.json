@@ -1,0 +1,58 @@
+{
+  "graph": "unchanged coordinate_dqn/coordinate_graph.npz candidate_nodes and coordinate_space",
+  "n_coordinate_states": 30104,
+  "n_actions": 5,
+  "start_node": 17945,
+  "start_barcode": "GSM9453843_CTGAAACGTAGCCTCG-1",
+  "endpoint": null,
+  "max_moves": 100,
+  "reward": "(H_current-H_next)/log(5) + (IKZF2_current-IKZF2_next)/IKZF2_start",
+  "branch2_extra_reward": "diversity_weight * change in distance to full branch1 / diversity_scale",
+  "diversity_weight": 0.5,
+  "diversity_scale": 2.3728182315826416,
+  "entropy": "query Gaussian nearest-5 Shannon, not centroid entropy",
+  "entropy_sigma": 0.07180769741535187,
+  "gamma": 0.999,
+  "updates_per_branch": 30000,
+  "patience": 20,
+  "entropy_epsilon": 1e-06,
+  "stopping": "20 consecutive moves without any stepwise entropy decrease; not a global-best entropy test",
+  "training": "Double DQN; uniform graph-transition samples plus exploratory trajectory replay",
+  "policy_selection": "highest learned-policy return with net decrease of both outputs",
+  "finite_horizon_reference_upper_bounds": [
+    1.0030642747879028,
+    1.2129863500595093
+  ],
+  "reference_used_for_policy_actions_or_training_labels": false,
+  "branches": [
+    {
+      "branch": 1,
+      "moves": 100,
+      "unique_coordinates": 60,
+      "status": "maximum_100_moves",
+      "discounted_return": 0.7937751233643255,
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 1.36680540926735,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.12746785581111908,
+      "PCA_max_displacement": 1.0783119976083015,
+      "PCA_endpoint_displacement": 1.0350086729681836,
+      "latent_max_displacement": 1.0900641679763794
+    },
+    {
+      "branch": 2,
+      "moves": 100,
+      "unique_coordinates": 74,
+      "status": "maximum_100_moves",
+      "discounted_return": 0.8354922390063554,
+      "entropy_start": 1.4699517457103932,
+      "entropy_end": 1.4676642239241473,
+      "IKZF2_start": 0.5283997058868408,
+      "IKZF2_end": 0.13097065687179565,
+      "PCA_max_displacement": 0.8624605705437579,
+      "PCA_endpoint_displacement": 0.8333925082225807,
+      "latent_max_displacement": 0.882633626461029
+    }
+  ],
+  "interpretation": "Fixed-VAE model trajectories, not causal KO or validated cell differentiation."
+}

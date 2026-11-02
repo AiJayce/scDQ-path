@@ -1,0 +1,35 @@
+{
+  "branches": [
+    {
+      "branch": 1,
+      "verified_original_graph_moves": 100,
+      "unique_coordinates": 60,
+      "PCA_max_displacement": 1.0783119976083015,
+      "PCA_range_ratio_vs_first_short_path": 7.687545299530029,
+      "IKZF2_fraction_reduced": 0.758766233921051,
+      "entropy_change": -0.10314633644304316,
+      "discounted_return": 0.7937751346947488,
+      "max_support_distance_k5": 0.19431117177009583,
+      "learned_Q_actions_reproduced": true
+    },
+    {
+      "branch": 2,
+      "verified_original_graph_moves": 100,
+      "unique_coordinates": 74,
+      "PCA_max_displacement": 0.8624605705437579,
+      "PCA_range_ratio_vs_first_short_path": 11.271966934204102,
+      "IKZF2_fraction_reduced": 0.7521371841430664,
+      "entropy_change": -0.0022875217862459163,
+      "discounted_return": 0.8354922368185528,
+      "max_support_distance_k5": 0.18845820426940918,
+      "learned_Q_actions_reproduced": true
+    }
+  ],
+  "endpoint_distance_16d": 0.6248695398275309,
+  "symmetric_mean_nearest_distance_excluding_shared_start_16d": 0.28163679635644867,
+  "limitations": [
+    "The learned paths revisit coordinates; 100 moves are not 100 unique coordinates.",
+    "Finite-horizon optimality and maximal branch separation are not established.",
+    "Branch 2 final entropy decrease is small; model response is not validated causal KO."
+  ]
+}

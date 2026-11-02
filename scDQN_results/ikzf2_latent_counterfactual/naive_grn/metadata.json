@@ -1,0 +1,12 @@
+{
+  "population": "CD4 Naive T",
+  "n_cells": 2567,
+  "n_genes_tested": 1999,
+  "n_significant": 1933,
+  "top_n_plotted": 40,
+  "baseline_IKZF2_negative_fraction": 0.0,
+  "median_latent_shift": 1.470950961112976,
+  "max_abs_IKZF2_after": 0.0001864270307123661,
+  "objective": "same as Treg section 9",
+  "interpretation": "Model response network, not causal or direct-binding GRN."
+}
