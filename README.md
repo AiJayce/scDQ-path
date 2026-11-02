@@ -1,57 +1,111 @@
-# scDQ-path
+# Advanced : Double KO Simulation
 
-## Algorithm
+## 6-1. Simulation of a Joint ATF6–IRE1 Suppression Trajectory
 
-- **Latent Space Representation:** Compresses high-dimensional single-cell transcriptomic profiles into a 16-dimensional continuous latent space using a Variational Autoencoder (VAE), preserving major transcriptional patterns while reducing dimensionality.
-- **DQN-based State Transition:** Employs Double Deep Q-Networks (Double DQN) to learn reward-guided transitions between cellular states, enabling goal-directed exploration of the latent space.
-- **Virtual Trajectory Inference:** Explores optimal and alternative latent trajectories to characterize potential cellular state transitions beyond conventional pseudotime-based approaches.
-- **Dynamic Transcription Factor Analysis:** Identifies transcription factors exhibiting dynamic expression patterns along inferred trajectories to investigate potential regulatory changes associated with cellular state transitions.
-- **Counterfactual Gene Knockout Simulation:** Performs in silico gene knockout simulations through latent-space optimization while keeping the trained VAE decoder frozen, allowing transcriptional responses to be investigated under predefined perturbation conditions.
-- **Gene Regulatory Network Construction:** Constructs directed perturbation-response networks by evaluating transcriptional changes associated with simulated gene perturbations and their downstream regulatory effects.
-- **Reverse scDQ-path:** Extends trajectory exploration through multiple DQN agents and latent-space visitation-density analysis, enabling probabilistic sampling of virtual cells from explored cellular state distributions.
-- **Multi-target Perturbation:** Supports both single-target and multi-target knockout simulations to investigate individual and combined perturbation-associated cellular responses.
+Extending the single-gene suppression approach, a virtual Double KO trajectory was explored to simultaneously reduce **ATF6 and IRE1**. Since the official gene symbol for IRE1 is **ERN1**, the decoder outputs of ATF6 and ERN1 were used as the two target genes in the model.
 
-## Key Novelty
+The expression space was learned using real control and ATF6–IRE1 double-perturbation cells. A DQN was then trained to jointly reduce the expression of both targets from a representative control coordinate. No specific destination coordinate was predefined.
 
-- **RL-driven Latent Space Exploration:** Introduces reinforcement learning as an approach to exploring continuous single-cell latent spaces, moving beyond static cell-state representations and conventional pseudotime ordering.
-- **Alternative and Compensatory Dynamics:** Captures multiple possible cellular trajectories, including alternative and potentially compensatory response paths, rather than restricting inference to a single progression route.
-- **Counterfactual Perturbation Modeling:** Integrates latent-space optimization with a frozen generative decoder to investigate transcriptional changes under simulated gene knockout conditions.
-- **Density-guided Virtual Cell Generation:** Introduces Reverse scDQ-path to aggregate latent-space exploration patterns and perform probabilistic sampling, generating heterogeneous virtual cell populations.
-- **Unified Dynamics and Perturbation Framework:** Integrates trajectory inference, regulatory analysis, counterfactual knockout simulation, and virtual cell generation within a unified reinforcement learning framework.
+### Double KO Model Configuration
 
-## Model Strengths
+<img width="3709" height="2211" alt="6-1" src="https://github.com/user-attachments/assets/09d57131-9147-4ca3-86fe-6569d0fa80fc" />
 
-<img width="3600" height="1520" alt="그림3" src="https://github.com/user-attachments/assets/cc12c19a-4c10-4fa6-814d-e1ecb66290ed" />
+| Component | Implementation | Purpose |
+|---|---|---|
+| Training conditions | `3x_neg_ctrl_pMJ144-2` and `ATF6_IRE1_pMJ152` | Learn the expression structure of control and real double-perturbation cells |
+| Representation space | VAE trained on 3,000 genes with a 128-dimensional latent space | Compress high-dimensional expression profiles for latent-space exploration |
+| Starting point | Virtual coordinate obtained by inverse PCA transformation of the dimension-wise median control PCA coordinates | Standardize the initial state across all trajectories |
+| Actions | Movement along positive and negative latent axes by 0.01 times the observed standard deviation | Generate trajectories through repeated small state transitions |
+| Action constraints | Both ATF6 and ERN1 must decrease, and the resulting expression values must remain non-negative | Prevent a decrease in one target from compensating for an increase in the other |
+| Reward | Mean of the two target reductions, normalized by their respective starting expression levels | Jointly evaluate targets with different expression magnitudes |
+| Support constraint | Distance threshold based on the fifth-nearest real cell | Restrict excessive deviation from the observed distribution |
+| Trajectory generation | 48 simulations across four independent DQN models | Explore diverse joint-suppression trajectories |
+| Representative trajectories | Branching using Ward clustering and the silhouette elbow method, followed by medoid selection | Summarize similar trajectories into representative branches |
+| Evaluation expression | Gaussian sampling around trajectory coordinates, followed by reconstruction using the fixed decoder | Generate virtual cell populations for comparison with real perturbation cells |
 
-- **Agent-based Continuous Trajectory Learning:** Utilizes trained DQN agents to learn sequential state transitions in a continuous latent space, enabling flexible trajectory inference beyond predefined cell-state ordering.
+The reward was defined as follows:
 
+$$
+r_t = 0.5 \left[
+\frac{ATF6_t-ATF6_{t+1}}{ATF6_{\mathrm{start}}}
++
+\frac{ERN1_t-ERN1_{t+1}}{ERN1_{\mathrm{start}}}
+\right]
+$$
 
-<img width="3600" height="1520" alt="124" src="https://github.com/user-attachments/assets/606ac36e-09d8-456d-8a8e-5b7df11ebe7f" />
+Only actions that decreased both targets were permitted. Entropy was used exclusively as a monitoring metric. Trajectories were terminated after a maximum of 500 movements, when no valid actions remained, or when the net displacement became stagnant during simulation.
 
-- **Directional Network Analysis:** Infers directed regulatory relationships and distinguishes positive (+) and negative (-) regulatory effects based on simulated transcriptional responses.
-- **Sparse and Non-sparse Network Analysis:** Supports both sparse and non-sparse network representations, allowing regulatory interactions to be investigated under different network constraints.
-- **Network Power Estimation:** Evaluates the magnitude of regulatory influence through network power analysis, providing an additional measure of the potential impact of individual regulatory interactions.
+In the attached execution, the 48 simulations were separated into **five branches**. This indicates that distinct movement patterns can emerge even when both targets are jointly suppressed. However, **joint suppression does not necessarily imply complete elimination of both target expressions**, and the Gaussian samples used for evaluation were not independently constrained to follow a monotonic decrease.
 
-<img width="3600" height="1520" alt="125" src="https://github.com/user-attachments/assets/5023a1e4-25f6-41ae-aa7b-57e063059f92" />
+---
 
-- **Probabilistic Virtual Cell Sampling:** Enables probabilistic sampling of heterogeneous virtual cell populations following gene knockout simulations by leveraging explored latent-space distributions and visitation densities.
+## 6-2. Comparison with Real Double and Single Perturbations: Unexpected Expression Similarity
 
-## Workflow
+To assess whether the generated Double KO population reproduced the characteristics of real double-perturbation cells, the **same virtual Double KO expression population** was independently compared with the following three real conditions:
 
-| Step | Process | Description |
-|:---:|---|---|
-| **01** | [**Data Preprocessing (PBMC)**](https://github.com/AiJayce/scDQ-path/tree/Data-Preprocessing-%28PBMC%29) | Preprocessing, quality control, normalization, and feature selection of PBMC single-cell transcriptomic data. |
-| **02** | [**Virtual Trajectory Construction**](https://github.com/AiJayce/scDQ-path/tree/Virtual-Trajectory-Construction) | DQN-based exploration of cellular state transitions and construction of continuous virtual trajectories. |
-| **03** | [**Gene Regulatory Network (GRN) Construction**](https://github.com/AiJayce/scDQ-path/tree/Gene-Regulatory-Network-%28GRN%29-Construction) | Inference of directed gene regulatory relationships and analysis of trajectory-dependent transcriptional dynamics. |
-| **04** | [**Reverse scDQ-path: Virtual Cell Sampling**](https://github.com/AiJayce/scDQ-path/tree/Reverse-scDQ-path-Virtual-Cell-Sampling) | Reverse latent-space exploration and density-guided probabilistic sampling to generate perturbation-associated virtual cells. |
-| **05** | [**Benchmark and Validation**](https://github.com/AiJayce/scDQ-path/tree/Benchmark-and-Validation) | Quantitative evaluation of virtual cell generation and perturbation responses against observed single-cell transcriptomic profiles. |
-| **06** | [**Advanced: Double KO Simulation**](https://github.com/AiJayce/scDQ-path/tree/Advanced-Double-KO-Simulation) | Advanced virtual cell simulation of combinatorial gene perturbations through double knockout (DKO) and evaluation of compensatory transcriptional responses. |
+- ATF6–IRE1 Double perturbation: `ATF6_IRE1_pMJ152`
+- ATF6 Single perturbation: `ATF6_only_pMJ145`
+- IRE1 Single perturbation: `IRE1_only_pMJ148`
+
+All comparisons used the same 2,000 evaluation genes and expression scale. Single-perturbation cells were excluded from representation learning and trajectory generation and were used only during the comparison stage.
+
+### Comparison Results
+
+<img width="3870" height="1951" alt="6-2" src="https://github.com/user-attachments/assets/623d5bb8-4cef-4011-8794-d4d0584f49a4" />
+
+| Real Comparison Condition | Cosine Median ↑ | MAE ↓ | RMSE ↓ |
+|---|---:|---:|---:|
+| ATF6–IRE1 Double KO | 0.8780 | 0.002009 | 0.018062 |
+| ATF6 Single KO | 0.9013 | 0.001938 | 0.017647 |
+| **IRE1 Single KO** | **0.9451** | **0.001443** | **0.008464** |
+
+The virtual Double KO showed **higher expression similarity to the IRE1 Single KO condition than to the real Double KO condition**. Both MAE and RMSE of gene-wise mean expression were also lower in the IRE1 Single KO comparison.
+
+Despite being designed to suppress both targets simultaneously, the generated population was more similar to the single IRE1 perturbation condition. This raised the question of whether **the current simulation sufficiently reproduces the transcriptional response specific to Double KO**. Satisfying the suppression constraints for both targets alone does not establish that the overall expression state of a double perturbation has been reproduced.
+
+Accuracy was not assessed solely from the central position of the residual boxplot. MAE and RMSE were also examined because positive and negative residuals can cancel each other, resulting in a small median or mean even when substantial errors remain for individual genes.
+
+Furthermore, real Double KO cells were included in DEG selection, VAE training, and support construction. Therefore, this comparison does not constitute an independent holdout validation. The results were interpreted as an **exploratory validation of condition-specific expression similarity**.
+
+---
+
+## 6-3. Examination of Target Expression Differences and Hypotheses for the Results
+
+<img width="3952" height="919" alt="6-3" src="https://github.com/user-attachments/assets/d28cfbdd-d754-4bb4-8999-acd6899a47eb" />
+
+To investigate possible explanations for the unexpected comparison results, the **measured expression distributions and mean expression levels of ATF6 and ERN1** were examined between the control and real Double KO conditions.
+
+In the figure, ATF6 showed a relatively high mean expression level in the control condition and a substantial decrease in the Double KO condition. In contrast, ERN1 already exhibited low expression in the control condition, resulting in a **smaller absolute difference in mean expression between the two conditions**.
+
+| Observation | ATF6 | IRE1 / ERN1 |
+|---|---|---|
+| Mean expression in control | Relatively high | Relatively low |
+| Absolute mean difference from Double KO | Large | Relatively small |
+| Consideration for interpretation | Target suppression signal is relatively distinct | Low expression and sparsity may make the suppression signal more difficult to distinguish |
+
+Based on these observations, the possibility that **differences in the magnitude and detectability of the observed suppression signals between the two targets influenced the simulation results** was considered. In particular, for a target such as ERN1 with low baseline expression, limited observed expression signals may affect representation learning and the estimation of decoder responses.
+
+However, a small **absolute difference in mean expression** does not necessarily indicate a low suppression rate or a statistically insignificant difference. When baseline expression is low, the relative reduction can still be substantial despite a small absolute change.
+
+Furthermore, this figure compares only two target genes between the control and Double KO conditions. Therefore, it cannot establish why the virtual Double KO showed greater similarity to the IRE1 Single KO condition. This explanation remains a hypothesis requiring further investigation through relative expression reduction, detection rate, and downstream response gene analyses, including the single-perturbation conditions.
+
+---
+
+## Conclusion
+
+This analysis demonstrated that **generating a trajectory that reduces target expression and reproducing the actual transcriptomic response of a KO or Double KO are distinct objectives**.
+
+Therefore, before performing KO simulations, it is necessary to determine whether suppression of each target is sufficiently observable in the real data. In particular, for Double KO simulations, the following aspects should be examined for both targets:
+
+- **Absolute and relative expression changes** compared with the control condition
+- Baseline expression levels and target detection rates
+- **Statistical evidence for expression changes** based on an appropriate replicate and testing design
+- Consistent responses of downstream genes and associated pathways
+
+**In other words, rather than judging simulation success solely by high overall expression similarity, it is essential to first establish whether the underlying suppression signals are sufficiently strong and reproducible.** The current mean expression plots provide exploratory evidence motivating this requirement, but do not establish statistical significance.
 
 ----
-For a more detailed explanation of the scDQ-path model, architecture, and algorithms, [**Click Here**](https://drive.google.com/file/d/1GaReSXWjaVRdAZodmbqQbnlcIYXwr0z8/view?usp=drive_link).
+[Click here to view the Double KO Simulation notebook](https://github.com/AiJayce/scDQ-path/blob/Advanced-Double-KO-Simulation/Double-KO.ipynb)
 ----
 
-## Core Technologies
-
-`Python` · `PyTorch` · `Variational Autoencoder (VAE)` · `Double DQN` · `Reinforcement Learning` · `Latent Space Exploration` · `Gene Regulatory Network (GRN)` · `Counterfactual Simulation` · `Virtual Cell` · `scRNA-seq`
 
